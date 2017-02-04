@@ -8,20 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		31CE0B5D1E4591A000B68B8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CE0B5C1E4591A000B68B8E /* AppDelegate.swift */; };
-		31CE0B5F1E4591A000B68B8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CE0B5E1E4591A000B68B8E /* ViewController.swift */; };
-		31CE0B621E4591A000B68B8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31CE0B601E4591A000B68B8E /* Main.storyboard */; };
 		31CE0B641E4591A000B68B8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31CE0B631E4591A000B68B8E /* Assets.xcassets */; };
 		31CE0B671E4591A000B68B8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31CE0B651E4591A000B68B8E /* LaunchScreen.storyboard */; };
+		31CE0B6F1E4593BC00B68B8E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CE0B6E1E4593BC00B68B8E /* HomeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		31CE0B591E4591A000B68B8E /* twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31CE0B5C1E4591A000B68B8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		31CE0B5E1E4591A000B68B8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		31CE0B611E4591A000B68B8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31CE0B631E4591A000B68B8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31CE0B661E4591A000B68B8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31CE0B681E4591A000B68B8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31CE0B6E1E4593BC00B68B8E /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +53,10 @@
 			isa = PBXGroup;
 			children = (
 				31CE0B5C1E4591A000B68B8E /* AppDelegate.swift */,
-				31CE0B5E1E4591A000B68B8E /* ViewController.swift */,
-				31CE0B601E4591A000B68B8E /* Main.storyboard */,
 				31CE0B631E4591A000B68B8E /* Assets.xcassets */,
 				31CE0B651E4591A000B68B8E /* LaunchScreen.storyboard */,
 				31CE0B681E4591A000B68B8E /* Info.plist */,
+				31CE0B6E1E4593BC00B68B8E /* HomeController.swift */,
 			);
 			path = twitter;
 			sourceTree = "<group>";
@@ -126,7 +123,6 @@
 			files = (
 				31CE0B671E4591A000B68B8E /* LaunchScreen.storyboard in Resources */,
 				31CE0B641E4591A000B68B8E /* Assets.xcassets in Resources */,
-				31CE0B621E4591A000B68B8E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,22 +133,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31CE0B5F1E4591A000B68B8E /* ViewController.swift in Sources */,
 				31CE0B5D1E4591A000B68B8E /* AppDelegate.swift in Sources */,
+				31CE0B6F1E4593BC00B68B8E /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		31CE0B601E4591A000B68B8E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				31CE0B611E4591A000B68B8E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		31CE0B651E4591A000B68B8E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -302,6 +290,7 @@
 				31CE0B6D1E4591A000B68B8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
