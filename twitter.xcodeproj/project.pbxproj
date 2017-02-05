@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		08021580CF44084A8D0E985B /* Pods_twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E435BFD7E354C60B473F167 /* Pods_twitter.framework */; };
+		313A42BC1E46F68800687428 /* HomeDataSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313A42BB1E46F68800687428 /* HomeDataSourceController.swift */; };
+		3177AF1A1E4701D800EE4E75 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177AF191E4701D800EE4E75 /* Cell.swift */; };
+		3177AF1E1E47025400EE4E75 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177AF1D1E47025400EE4E75 /* HomeDataSource.swift */; };
 		31CE0B5D1E4591A000B68B8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CE0B5C1E4591A000B68B8E /* AppDelegate.swift */; };
 		31CE0B641E4591A000B68B8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31CE0B631E4591A000B68B8E /* Assets.xcassets */; };
 		31CE0B671E4591A000B68B8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31CE0B651E4591A000B68B8E /* LaunchScreen.storyboard */; };
@@ -16,6 +19,9 @@
 
 /* Begin PBXFileReference section */
 		03EAD076909A8C28DAF4F619 /* Pods-twitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-twitter/Pods-twitter.release.xcconfig"; sourceTree = "<group>"; };
+		313A42BB1E46F68800687428 /* HomeDataSourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDataSourceController.swift; sourceTree = "<group>"; };
+		3177AF191E4701D800EE4E75 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		3177AF1D1E47025400EE4E75 /* HomeDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
 		31CE0B591E4591A000B68B8E /* twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31CE0B5C1E4591A000B68B8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31CE0B631E4591A000B68B8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +44,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3177AF161E4700EC00EE4E75 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3177AF1D1E47025400EE4E75 /* HomeDataSource.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3177AF171E4700F100EE4E75 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				313A42BB1E46F68800687428 /* HomeDataSourceController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3177AF181E4700FC00EE4E75 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3177AF191E4701D800EE4E75 /* Cell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		31CE0B501E45919F00B68B8E = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +89,9 @@
 		31CE0B5B1E4591A000B68B8E /* twitter */ = {
 			isa = PBXGroup;
 			children = (
+				3177AF161E4700EC00EE4E75 /* Model */,
+				3177AF181E4700FC00EE4E75 /* View */,
+				3177AF171E4700F100EE4E75 /* Controller */,
 				31CE0B5C1E4591A000B68B8E /* AppDelegate.swift */,
 				31CE0B631E4591A000B68B8E /* Assets.xcassets */,
 				31CE0B651E4591A000B68B8E /* LaunchScreen.storyboard */,
@@ -208,6 +241,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3177AF1E1E47025400EE4E75 /* HomeDataSource.swift in Sources */,
+				313A42BC1E46F68800687428 /* HomeDataSourceController.swift in Sources */,
+				3177AF1A1E4701D800EE4E75 /* Cell.swift in Sources */,
 				31CE0B5D1E4591A000B68B8E /* AppDelegate.swift in Sources */,
 				31CE0B6F1E4593BC00B68B8E /* HomeController.swift in Sources */,
 			);
