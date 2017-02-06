@@ -42,6 +42,9 @@ class UserHeader: DatasourceCell {
     override func setupViews() {
         super.setupViews()
         
+        separatorLineView.isHidden = false
+        separatorLineView.backgroundColor = UIColor(r: 230, g: 230, b: 230)
+        
         addSubview(titleLabel)
         
         titleLabel.anchor(self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
@@ -92,6 +95,8 @@ class HomeCell: DatasourceCell {
         let textView = UITextView()
         textView.text = "This is test description for demo twitter clone application for iOS using swift programming language."
         textView.font = UIFont.systemFont(ofSize: 15)
+        textView.backgroundColor = .clear
+        
         return textView
     }()
     
@@ -112,6 +117,11 @@ class HomeCell: DatasourceCell {
     }()
     
     override func setupViews() {
+        
+        super.setupViews()
+        
+        separatorLineView.isHidden = false
+        separatorLineView.backgroundColor = UIColor(r: 230, g: 230, b: 230)
         
         addSubview(profileImageView)
         addSubview(nameLabel)
