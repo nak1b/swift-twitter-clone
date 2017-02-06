@@ -33,7 +33,7 @@ class HomeDataSouce: Datasource {
     }
     
     override func cellClasses() -> [DatasourceCell.Type] {
-        return [HomeCell.self]
+        return [UserCell.self]
     }
     
     override func headerClasses() -> [DatasourceCell.Type]? {

@@ -10,6 +10,7 @@
 		08021580CF44084A8D0E985B /* Pods_twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E435BFD7E354C60B473F167 /* Pods_twitter.framework */; };
 		31036AB01E485D6200E6FE18 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31036AAF1E485D6200E6FE18 /* Constants.swift */; };
 		31036AB21E48634300E6FE18 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31036AB11E48634300E6FE18 /* User.swift */; };
+		31036AB41E48678000E6FE18 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31036AB31E48678000E6FE18 /* UserCell.swift */; };
 		313A42BC1E46F68800687428 /* HomeDataSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313A42BB1E46F68800687428 /* HomeDataSourceController.swift */; };
 		3177AF1A1E4701D800EE4E75 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177AF191E4701D800EE4E75 /* Cell.swift */; };
 		3177AF1E1E47025400EE4E75 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177AF1D1E47025400EE4E75 /* HomeDataSource.swift */; };
@@ -23,6 +24,7 @@
 		03EAD076909A8C28DAF4F619 /* Pods-twitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-twitter/Pods-twitter.release.xcconfig"; sourceTree = "<group>"; };
 		31036AAF1E485D6200E6FE18 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		31036AB11E48634300E6FE18 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		31036AB31E48678000E6FE18 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		313A42BB1E46F68800687428 /* HomeDataSourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDataSourceController.swift; sourceTree = "<group>"; };
 		3177AF191E4701D800EE4E75 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		3177AF1D1E47025400EE4E75 /* HomeDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				3177AF191E4701D800EE4E75 /* Cell.swift */,
+				31036AB31E48678000E6FE18 /* UserCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31036AB41E48678000E6FE18 /* UserCell.swift in Sources */,
 				3177AF1E1E47025400EE4E75 /* HomeDataSource.swift in Sources */,
 				313A42BC1E46F68800687428 /* HomeDataSourceController.swift in Sources */,
 				3177AF1A1E4701D800EE4E75 /* Cell.swift in Sources */,
