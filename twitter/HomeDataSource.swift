@@ -23,8 +23,14 @@ class HomeDataSouce: Datasource {
         return [user1, user2, user3]
     }()
     
+    let tweets = ["one", "two"]
     
     override func numberOfItems(_ section: Int) -> Int {
+        
+        if section == 1 {
+            return tweets.count
+        }
+        
         return users.count
     }
     
@@ -33,7 +39,7 @@ class HomeDataSouce: Datasource {
     }
     
     override func cellClasses() -> [DatasourceCell.Type] {
-        return [UserCell.self]
+        return [UserCell.self, TweetCell.self]
     }
     
     override func headerClasses() -> [DatasourceCell.Type]? {
@@ -42,5 +48,9 @@ class HomeDataSouce: Datasource {
     
     override func footerClasses() -> [DatasourceCell.Type]? {
         return [UserFooter.self]
+    }
+    
+    override func numberOfSections() -> Int {
+        return 2
     }
 }
