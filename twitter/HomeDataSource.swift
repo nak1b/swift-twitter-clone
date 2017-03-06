@@ -23,7 +23,15 @@ class HomeDataSouce: Datasource {
         return [user1, user2, user3]
     }()
     
-    let tweets = ["one", "two"]
+    let tweets:[Tweet] = {
+        let user1 = User(name: "Nakib Momin", username: "@nakib14", bioText: "This is test description for demo twitter clone application for iOS using swift programming language.", profileImage: #imageLiteral(resourceName: "profile-image"))
+        
+        let tweet1 = Tweet(user: user1, message: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.")
+        
+        let tweet2 = Tweet(user: user1, message: "This is another example tweet")
+        
+        return [tweet1, tweet2]
+    }()
     
     override func numberOfItems(_ section: Int) -> Int {
         
@@ -35,6 +43,11 @@ class HomeDataSouce: Datasource {
     }
     
     override func item(_ indexPath: IndexPath) -> Any? {
+        
+        if indexPath.section == 1 {
+            return tweets[indexPath.row]
+        }
+        
         return users[indexPath.row]
     }
     
