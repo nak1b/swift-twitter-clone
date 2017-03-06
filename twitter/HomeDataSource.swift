@@ -7,21 +7,28 @@
 //
 
 import LBTAComponents
+import TRON
+import SwiftyJSON
 
-
-class HomeDataSouce: Datasource {
+class HomeDataSouce: Datasource, JSONDecodable {
     
-    let users:[User] = {
-        let user1 = User(name: "Nakib Momin", username: "@nakib14", bioText: "This is test description for demo twitter clone application for iOS using swift programming language.", profileImage: #imageLiteral(resourceName: "profile-image"))
+    let users:[User]
+    
+    required init(json: JSON) throws {
+        let array = json["users"].array
+        var users = [User]()
         
-        let user2 = User(name: "John Doe", username: "@john.doe", bioText: "Another sample description for demo twitter clone application.", profileImage: #imageLiteral(resourceName: "demo-profile2"))
-        
-        
-        let user3 = User(name: "Michael", username: "@michael", bioText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.", profileImage: #imageLiteral(resourceName: "demo-profile3"))
-        
-        
-        return [user1, user2, user3]
-    }()
+        for userJson in array! {
+            let name = userJson["name"].stringValue
+            let username = userJson["username"].stringValue
+            let bio = userJson["bio"].stringValue
+            
+            let user = User(name: name, username: username, bioText: bio, profileImage: UIImage())
+            users.append(user)
+        }
+        self.users = users
+    }
+
     
     let tweets:[Tweet] = {
         let user1 = User(name: "Nakib Momin", username: "@nakib14", bioText: "This is test description for demo twitter clone application for iOS using swift programming language.", profileImage: #imageLiteral(resourceName: "profile-image"))
