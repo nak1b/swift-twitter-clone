@@ -22,29 +22,13 @@ class HomeDataSourceController: DatasourceController {
         //self.datasource = words
         
         setupNavigation()
-        fetchHomeFeed()
-    }
-    
-    class JSONError: JSONDecodable {
-        required init(json: JSON) throws {
-            print("JSON Error")
-        }
-    }
-    
-    let tron = TRON(baseURL: "https://api.letsbuildthatapp.com")
-    
-    fileprivate func fetchHomeFeed() {
-        let request: APIRequest<HomeDataSouce, JSONError> = tron.request("/twitter/home")
-        request.perform(withSuccess: { (homeDataSource) in
-            
+        
+        
+        Service.sharedInstance.fetchHomeFeed { (homeDataSource) in
             self.datasource = homeDataSource
-            print("Successfully fetched json")
-            
-        }) { (error) in
-            print("Failed to fetch json...", error)
         }
     }
-    
+
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         collectionViewLayout.invalidateLayout()
     }
