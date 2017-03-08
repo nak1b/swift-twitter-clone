@@ -16,30 +16,11 @@ class HomeDataSouce: Datasource, JSONDecodable {
     let tweets:[Tweet]
     
     required init(json: JSON) throws {
-        let usersArray = json["users"].array
-       
+        let usersJsonArray = json["users"].array
+        let tweetJsonArray = json["tweets"].array
         
-        var users = [User]()
-        var tweets = [Tweet]()
-        
-        for userJson in usersArray! {
-            let user = User(json: userJson)
-            users.append(user)
-        }
-        
-        let tweetArray = json["tweets"].array
-        
-        for tweetJson in tweetArray! {
-            let userJson = tweetJson["user"]
-            let message = tweetJson["message"].stringValue
-            
-            let user = User(json: userJson)
-            let tweet = Tweet(user: user, message: message)
-            tweets.append(tweet)
-        }
-        
-        self.users = users
-        self.tweets = tweets
+        self.users = usersJsonArray!.map({ return User(json: $0) })
+        self.tweets = tweetJsonArray!.map({ return Tweet(json: $0) })
     }
 
     override func numberOfItems(_ section: Int) -> Int {
