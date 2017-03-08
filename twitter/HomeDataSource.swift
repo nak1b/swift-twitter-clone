@@ -13,33 +13,35 @@ import SwiftyJSON
 class HomeDataSouce: Datasource, JSONDecodable {
     
     let users:[User]
+    let tweets:[Tweet]
     
     required init(json: JSON) throws {
-        let array = json["users"].array
-        var users = [User]()
+        let usersArray = json["users"].array
+       
         
-        for userJson in array! {
-            let name = userJson["name"].stringValue
-            let username = userJson["username"].stringValue
-            let bio = userJson["bio"].stringValue
-            
-            let user = User(name: name, username: username, bioText: bio, profileImage: UIImage())
+        var users = [User]()
+        var tweets = [Tweet]()
+        
+        for userJson in usersArray! {
+            let user = User(json: userJson)
             users.append(user)
         }
+        
+        let tweetArray = json["tweets"].array
+        
+        for tweetJson in tweetArray! {
+            let userJson = tweetJson["user"]
+            let message = tweetJson["message"].stringValue
+            
+            let user = User(json: userJson)
+            let tweet = Tweet(user: user, message: message)
+            tweets.append(tweet)
+        }
+        
         self.users = users
+        self.tweets = tweets
     }
 
-    
-    let tweets:[Tweet] = {
-        let user1 = User(name: "Nakib Momin", username: "@nakib14", bioText: "This is test description for demo twitter clone application for iOS using swift programming language.", profileImage: #imageLiteral(resourceName: "profile-image"))
-        
-        let tweet1 = Tweet(user: user1, message: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.")
-        
-        let tweet2 = Tweet(user: user1, message: "This is another example tweet")
-        
-        return [tweet1, tweet2]
-    }()
-    
     override func numberOfItems(_ section: Int) -> Int {
         
         if section == 1 {

@@ -17,12 +17,7 @@ class HomeDataSourceController: DatasourceController {
         
         collectionView?.backgroundColor = UIColor(r: 232, g: 236, b: 241)
         
-        //let words = HomeDataSouce()
-        
-        //self.datasource = words
-        
         setupNavigation()
-        
         
         Service.sharedInstance.fetchHomeFeed { (homeDataSource) in
             self.datasource = homeDataSource
