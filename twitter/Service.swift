@@ -22,14 +22,14 @@ struct Service {
         }
     }
     
-    func fetchHomeFeed(completion: @escaping (HomeDataSouce) -> ()) {
+    func fetchHomeFeed(completion: @escaping (HomeDataSouce?, Error?) -> ()) {
         let request: APIRequest<HomeDataSouce, JSONError> = tron.request("/twitter/home")
         request.perform(withSuccess: { (homeDataSource) in
         
-            completion(homeDataSource)
+            completion(homeDataSource, nil)
             
         }) { (error) in
-            print("Failed to fetch json...", error)
+            completion(nil, error)
         }
     }
     

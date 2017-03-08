@@ -12,15 +12,42 @@ import SwiftyJSON
 
 class HomeDataSourceController: DatasourceController {
     
+    let errorMessageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Apologies, something went wrong. Please try again later..."
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.isHidden = true
+        
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(errorMessageLabel)
+        errorMessageLabel.fillSuperview()
         
         collectionView?.backgroundColor = UIColor(r: 232, g: 236, b: 241)
         
         setupNavigation()
         
-        Service.sharedInstance.fetchHomeFeed { (homeDataSource) in
+        Service.sharedInstance.fetchHomeFeed { (homeDataSource, error) in
+            
+            if let error = error {
+                self.errorMessageLabel.isHidden = false
+                
+                if let apiError = error as? APIError<Service.JSONError> {
+                    if apiError.response?.statusCode == 404 {
+                        self.errorMessageLabel.text = "Page Not Found"
+                    }
+                }
+                
+                return
+            }
+            
             self.datasource = homeDataSource
+            
         }
     }
 
