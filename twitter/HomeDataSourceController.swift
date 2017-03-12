@@ -71,23 +71,43 @@ class HomeDataSourceController: DatasourceController {
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if let user = self.datasource?.item(indexPath) as? User {
-            
+        if indexPath.section == 0 {
+            guard let user = self.datasource?.item(indexPath) as? User else { return .zero }
+                
             //calcualting cell heigh from user.bioText
-            let approxBioTextWidth = self.view.frame.width - 50 - 12 - 12 - 2
-            let size = CGSize(width: approxBioTextWidth, height: 1000)
-            let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 15)]
+            let estimatedHeight = self.estimatedHeightForText(user.bioText)
             
-            let estimatedFrame = NSString(string: user.bioText).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+            return CGSize(width: self.view.frame.width, height: estimatedHeight + 66)
             
-            return CGSize(width: self.view.frame.width, height: estimatedFrame.height + 66)
         }
+        
+        if indexPath.section == 1 {
+            guard let tweet = self.datasource?.item(indexPath) as? Tweet else { return .zero }
+            
+            //calcualting cell heigh from tweet.message
+            let estimatedHeight = self.estimatedHeightForText(tweet.message)
+            
+            return CGSize(width: self.view.frame.width, height: estimatedHeight + 74)
+            
+        }
+        
+        
         
         return CGSize(width: self.view.frame.width, height: 200)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    
+    private func estimatedHeightForText(_ text: String) -> CGFloat {
+        let approxBioTextWidth = self.view.frame.width - 50 - 12 - 12 - 2
+        let size = CGSize(width: approxBioTextWidth, height: 1000)
+        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 15)]
+        
+        let estimatedFrame = NSString(string: text).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+        
+        return  estimatedFrame.height
     }
 
 }
